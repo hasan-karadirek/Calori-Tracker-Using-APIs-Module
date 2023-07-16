@@ -1,0 +1,25 @@
+{
+  "name": "using-apis-project",
+  "version": "1.0.0",
+  "description": "HackYourFuture Using APIs Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hasan-karadirek/Calori-Tracker-Using-APIs-Project.git"
+  },
+  "keywords": [
+    "calori-tracker"
+  ],
+  "author": "Hasan Karadirek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hasan-karadirek/Calori-Tracker-Using-APIs-Project/issues"
+  },
+  "homepage": "https://github.com/hasan-karadirek/Calori-Tracker-Using-APIs-Project#readme",
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  }
+}
