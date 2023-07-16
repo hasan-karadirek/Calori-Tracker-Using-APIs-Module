@@ -1,5 +1,5 @@
-export const fetchFoodData = () => {
-    const query = "apple";
+export const fetchFoodData = (searchInput) => {
+    
     const API_URL = "https://trackapi.nutritionix.com/v2/natural/nutrients";
     const options = {
       method: "POST",
@@ -11,7 +11,7 @@ export const fetchFoodData = () => {
         accept: "application/json",
       },
       body: JSON.stringify({
-        query: query,
+        query: searchInput,
         num_servings: 0,
         line_delimited: false,
         use_raw_foods: false,
@@ -25,9 +25,18 @@ export const fetchFoodData = () => {
         last_modified: false,
       }),
     };
-    fetch(API_URL, options)
-      .then((res) => res.json())
-      .then(res=>console.log(res))
+    return new Promise((resolve,reject)=>{
+
+      fetch(API_URL, options)
+      .then((res) => {
+        if(res.ok){
+          resolve(res.json())
+        }else{
+          reject(new Error(`HTTP ERROR: ERROR CODE:${res.status}`))
+        }
+      })
       .catch((error) => console.log(error));
+    })
+    
   };
   
