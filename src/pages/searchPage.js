@@ -3,6 +3,7 @@ import { createSearchBarElement } from "../views/searchBarView.js"
 import { fetchFoodData} from "../../data/fetchFoodNutrition.js"
 export const initSearchPage=()=>{
     const userInterface=document.getElementById(USER_INTERFACE_ID)
+    userInterface.innerHTML=""
     const searchBar=createSearchBarElement()
     userInterface.appendChild(searchBar)
     document.getElementById(SEARCH_BUTTON_ID).addEventListener("click",()=>{
