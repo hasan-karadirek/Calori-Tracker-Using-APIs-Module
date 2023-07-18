@@ -45,13 +45,13 @@ async function listSearchedFood(searchInput){
             addFood(food,consumedQt)
         })
     } catch (error) {
-        console.log(error)
-        alert(error.message)
+        createSystemMessageElement(error.message)
     }
 }
 
 async function addFood(food,consumedQt){
-    const userObj=JSON.parse(getCookies("userObj"))
+    try {
+        const userObj=JSON.parse(getCookies("userObj"))
     const cookieArr=decodeURIComponent(document.cookie).split(";")
     let userJwt=userObj["x-user-jwt"]
     const foodLog=await addFoodLog(food,consumedQt,userJwt)
@@ -62,6 +62,10 @@ async function addFood(food,consumedQt){
     setTimeout(()=>{
         systemMessageDiv.innerHTML=""
     },15000)
+    } catch (error) {
+        createSystemMessageElement(error.message)
+    }
+    
 
 }
 

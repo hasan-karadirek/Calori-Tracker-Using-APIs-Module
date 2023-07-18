@@ -31,11 +31,13 @@ export const fetchFoodData = (searchInput) => {
       .then((res) => {
         if(res.ok){
           resolve(res.json())
+        }else if(res.status.toString().startsWith("4")){
+          reject(new Error("Validation Error, There is no food in database with this keyword. Please type a correct food name"))
         }else{
-          reject(new Error(`HTTP ERROR: ERROR CODE:${res.status}`))
+          reject(new Error(`Error Code: ${res.status}`))
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {return error});
     })
     
   };

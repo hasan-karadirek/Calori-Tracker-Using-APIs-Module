@@ -27,7 +27,7 @@ async function signInUser(email,password){
         initSearchPage()
         
     } catch (error) {
-        alert(error.message)
+        createSystemMessageElement(error.message) 
     }
     
 }

@@ -1,6 +1,7 @@
 import { signUpUserToApi } from "../../data/signUpUser.js";
 import { SIGN_UP_FORM_ID, USER_INTERFACE_ID } from "../constants.js";
 import { createSignUpFormElement } from "../views/signUpFormView.js";
+import { createSystemMessageElement } from "../views/systemMessageView.js";
 import { initSearchPage } from "./searchPage.js";
 
 
@@ -28,8 +29,7 @@ async function signUpUser(name,email,password){
         initSearchPage()
         
     } catch (error) {
-        alert(error.message)
-        
+        createSystemMessageElement(error.message)        
     }
     
 }

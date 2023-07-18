@@ -18,9 +18,10 @@ export const signInUserToApi=(email,password)=>{
             if(res.ok){
                 resolve(res.json())
             }else{
-                reject(new Error("signin error"))
+                reject(new Error("Password or Email is wrong. Please try correct email & password combination"))
             }
         })
+        .catch(error=>{return error})
         
     })
 }
