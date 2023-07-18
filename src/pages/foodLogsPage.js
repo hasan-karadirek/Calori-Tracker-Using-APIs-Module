@@ -42,8 +42,23 @@ const showDaysLog=(userFoodLogs,numDays)=>{
     userInterface.innerHTML=""
     const userMenuElement=createUserMenuElement()
     userInterface.appendChild(userMenuElement)
+    const rangeDiv=createDayRangeElement()
+    userInterface.appendChild(rangeDiv)
     const rangedDailyMakros=calculateMakros(userFoodLogs,numDays)
     const logElement=createFoodLogsElement(rangedDailyMakros,userFoodLogs)
     userInterface.appendChild(logElement)
+
+    document.getElementById(SEARCH_PAGE_ID).addEventListener("click",()=>{
+        initSearchPage()
+    })
+
+    const rangeElements=document.getElementsByClassName(DAY_RANGE_ID)
+    for(const element of rangeElements){
+        element.addEventListener("click",(event)=>{
+            console.log(event.srcElement.dataset.value)
+            showDaysLog(userFoodLogs,event.srcElement.dataset.value)
+        })
+
+    }
 
 }
