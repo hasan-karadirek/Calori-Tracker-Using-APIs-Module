@@ -3,10 +3,14 @@ import { SIGN_UP_FORM_ID } from "../constants.js";
 export const createSignUpFormElement = () => {
     const element = document.createElement('div');
     element.innerHTML = String.raw`
+    <img src="./public/img_avatar2.png" class="avatar">
     <form id=${SIGN_UP_FORM_ID}>
-        <input type="fName" id="fName">
-      <input type="email" id="email" name="email">
-      <input type="password" id="password" name="password">
+    <label for="fName"><b>Name*</b></label>
+        <input type="fName" placeholder="Enter Your Name" id="fName">
+      <label for="email"><b>Email*</b></label>
+      <input type="email" placeholder="Enter Your Email" id="email" name="email">
+      <label for="password"><b>Password*</b></label>
+      <input type="password" placeholder="Enter Your Password" id="password" name="password">
       <input type="submit" id="submit-sign-up">
       
     </form>

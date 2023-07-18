@@ -1,4 +1,4 @@
-import { USER_INTERFACE_ID,SEARCH_BUTTON_ID,SEARCH_INPUT_ID, ADD_FOOD_BUTTON_ID, CONSUMED_FOOD_QT_ID, SYSTEM_MESSAGE_ID, FOOD_LOGS_ID } from "../constants.js"
+import { USER_INTERFACE_ID,SEARCH_BUTTON_ID,SEARCH_INPUT_ID, ADD_FOOD_BUTTON_ID, CONSUMED_FOOD_QT_ID, SYSTEM_MESSAGE_ID, FOOD_LOGS_ID, SEARCH_PAGE_ID } from "../constants.js"
 import { createSearchBarElement } from "../views/searchBarView.js"
 import { fetchFoodData} from "../../data/fetchFoodNutrition.js"
 import { createFoodTableElement } from "../views/foodTableView.js"
@@ -22,6 +22,9 @@ export const initSearchPage=()=>{
     document.getElementById(FOOD_LOGS_ID).addEventListener("click",()=>{
         initFoodLogsPage()
     })
+
+    document.getElementById(SEARCH_PAGE_ID).classList.add("selected")
+    document.getElementById(FOOD_LOGS_ID).classList.remove("selected")
 
 }
 async function listSearchedFood(searchInput){
