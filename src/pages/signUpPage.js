@@ -24,6 +24,7 @@ async function signUpUser(name,email,password){
     try {
         const userObj=await signUpUserToApi(name,email,password)
         document.cookie="userObj="+JSON.stringify(userObj)+";domain=;path=/"
+        window.localStorage.setItem("foodLogs",JSON.stringify({}))
         initSearchPage()
         
     } catch (error) {
