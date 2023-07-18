@@ -30,11 +30,17 @@ export const initSearchPage=()=>{
 async function listSearchedFood(searchInput){
     try {
         const userInterface=document.getElementById(USER_INTERFACE_ID)
+       
+        if(document.getElementById("food-table")!==null){
+            document.getElementById("food-table").remove()
+        }
+
         const food=await fetchFoodData(searchInput).then(res=>{return res["foods"][0]})
         console.log(food)
         const foodTable=createFoodTableElement(food)
         userInterface.appendChild(foodTable)
-        document.getElementById(ADD_FOOD_BUTTON_ID).addEventListener("click",()=>{
+        document.getElementById(ADD_FOOD_BUTTON_ID).addEventListener("submit",(event)=>{
+            event.preventDefault()
             const consumedQt=document.getElementById(CONSUMED_FOOD_QT_ID).value
             addFood(food,consumedQt)
         })

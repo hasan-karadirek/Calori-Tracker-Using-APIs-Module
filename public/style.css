@@ -1,9 +1,11 @@
 
 .centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    text-transform: capitalize;
+    position: relative;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
     text-align: center;
   }
 
@@ -61,6 +63,7 @@ img.avatar {
 .macros-container{
     display: flex;
     color:#04AA6D;
+    justify-content: center;
 }
 .macros-pair{
     display: block;
@@ -73,12 +76,15 @@ img.avatar {
 }
 
 .micros-container{
-    display: block;
+    display: flex;
     color:#04AA6D;
     margin: auto;
+    justify-content: center;
+    flex-direction: column;
 }
 .micros-four{
     display: flex;
+    justify-content: center;
 }
 .micro{
     margin:5px;
@@ -89,4 +95,64 @@ img.avatar {
 .macros-micros{
     display:block;
     
+    
+}
+#day-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#day-report{
+    flex-basis: 100%;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#log-element{
+    
+flex-basis: 25%; /* Set each item to occupy 25% of the container width */
+box-sizing: border-box;
+border: 1px solid #746c6c;
+}
+
+#log-element p{
+    line-height: 12px;
+    text-align: left;
+    margin:15px;
+}
+.date-of-day{
+    flex-basis: 100%;
+}
+.macros-of-day{
+    flex-basis: 25%;
+}
+.macros-of-day span{
+    margin:5px;
+    font-weight: 400;
+}
+#day-range-div{
+    justify-content: center;
+    display: flex;
+    
+
+
+}
+
+#total-element{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+#total-title{
+    flex-basis: 100%;
+}
+.total-macro-pair{
+    flex-basis: 50%;
+}
+
+@media only screen and (max-width: 450px) {
+    .centered{
+        max-width: 100%;
+    }
 }

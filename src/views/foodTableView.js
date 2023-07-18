@@ -2,6 +2,7 @@ import { ADD_FOOD_BUTTON_ID, CONSUMED_FOOD_QT_ID } from "../constants.js"
 
 export const createFoodTableElement=(food)=>{
     const element=document.createElement("div")
+    element.id="food-table"
     element.innerHTML=String.raw`
     <h1>${food.food_name}</h1>
     <img src=${food.photo.thumb}><br>
@@ -31,10 +32,10 @@ export const createFoodTableElement=(food)=>{
     <div class="micro"><span>Potassium:</span> <p>${food.nf_potassium}</p></div>
     </div>
     </div>
-    
-    <input id=${CONSUMED_FOOD_QT_ID} min="1" type="number">
-    <button id=${ADD_FOOD_BUTTON_ID}>Add</button>
-   
+    <form id=${ADD_FOOD_BUTTON_ID}>
+    <input id=${CONSUMED_FOOD_QT_ID} min="1" placeholder="Quantity" type="number" name="qt">
+    <input  type="submit" value="Add ">
+    <form>
     `
     return element
 }
