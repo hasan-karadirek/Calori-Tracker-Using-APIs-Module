@@ -1,0 +1,158 @@
+
+.centered {
+    text-transform: capitalize;
+    position: relative;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+  }
+
+#welcome-image{
+    width: 70%  ;
+}
+button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+button:hover {
+    opacity: 0.8;
+  }
+input[type=submit]{
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+
+  }
+input[type=submit]:hover{
+    opacity: 0.8;
+  }
+input[type=email], input[type=password], input[type=fName], input[type=text], input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+
+#user-menu{
+    display:flex;
+  }
+  #user-menu button{
+    margin: 10px;
+    
+  }
+.selected{
+    opacity: 0.65;
+}
+.macros-container{
+    display: flex;
+    color:#04AA6D;
+    justify-content: center;
+}
+.macros-pair{
+    display: block;
+}
+.macro{
+    margin:20px;
+}
+.macro span{
+    font-size: 22px;
+}
+
+.micros-container{
+    display: flex;
+    color:#04AA6D;
+    margin: auto;
+    justify-content: center;
+    flex-direction: column;
+}
+.micros-four{
+    display: flex;
+    justify-content: center;
+}
+.micro{
+    margin:5px;
+}
+.micro span{
+    font-size: 16px;
+}
+.macros-micros{
+    display:block;
+    
+    
+}
+#day-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#day-report{
+    flex-basis: 100%;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#log-element{
+    
+flex-basis: 25%; /* Set each item to occupy 25% of the container width */
+box-sizing: border-box;
+border: 1px solid #746c6c;
+}
+
+#log-element p{
+    line-height: 12px;
+    text-align: left;
+    margin:15px;
+}
+.date-of-day{
+    flex-basis: 100%;
+}
+.macros-of-day{
+    flex-basis: 25%;
+}
+.macros-of-day span{
+    margin:5px;
+    font-weight: 400;
+}
+#day-range-div{
+    justify-content: center;
+    display: flex;
+    
+
+
+}
+
+#total-element{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+#total-title{
+    flex-basis: 100%;
+}
+.total-macro-pair{
+    flex-basis: 50%;
+}
+
+@media only screen and (max-width: 450px) {
+    .centered{
+        max-width: 100%;
+    }
+}

@@ -1,11 +1,12 @@
-import { FOOD_LOGS_ID } from "../constants.js"
+import { FOOD_LOGS_ID, SEARCH_PAGE_ID } from "../constants.js"
 
 export const createUserMenuElement=()=>{
-    const element=document.createElement("ul")
+    const element=document.createElement("div")
+    element.id="user-menu"
     element.innerHTML=String.raw`
-    <li>Home</li>
-    <li id=${FOOD_LOGS_ID}>Food Logs</li>
-    <li>Stats</li>
+    <button id=${SEARCH_PAGE_ID}>Search & Add</button>
+    <button id=${FOOD_LOGS_ID}>Food Logs</button>
+    
     `
     return element
 }

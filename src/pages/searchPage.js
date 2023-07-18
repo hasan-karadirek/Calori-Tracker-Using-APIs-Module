@@ -1,4 +1,4 @@
-import { USER_INTERFACE_ID,SEARCH_BUTTON_ID,SEARCH_INPUT_ID, ADD_FOOD_BUTTON_ID, CONSUMED_FOOD_QT_ID, SYSTEM_MESSAGE_ID, FOOD_LOGS_ID } from "../constants.js"
+import { USER_INTERFACE_ID,SEARCH_BUTTON_ID,SEARCH_INPUT_ID, ADD_FOOD_BUTTON_ID, CONSUMED_FOOD_QT_ID, SYSTEM_MESSAGE_ID, FOOD_LOGS_ID, SEARCH_PAGE_ID } from "../constants.js"
 import { createSearchBarElement } from "../views/searchBarView.js"
 import { fetchFoodData} from "../../data/fetchFoodNutrition.js"
 import { createFoodTableElement } from "../views/foodTableView.js"
@@ -23,15 +23,24 @@ export const initSearchPage=()=>{
         initFoodLogsPage()
     })
 
+    document.getElementById(SEARCH_PAGE_ID).classList.add("selected")
+    document.getElementById(FOOD_LOGS_ID).classList.remove("selected")
+
 }
 async function listSearchedFood(searchInput){
     try {
         const userInterface=document.getElementById(USER_INTERFACE_ID)
+       
+        if(document.getElementById("food-table")!==null){
+            document.getElementById("food-table").remove()
+        }
+
         const food=await fetchFoodData(searchInput).then(res=>{return res["foods"][0]})
         console.log(food)
         const foodTable=createFoodTableElement(food)
         userInterface.appendChild(foodTable)
-        document.getElementById(ADD_FOOD_BUTTON_ID).addEventListener("click",()=>{
+        document.getElementById(ADD_FOOD_BUTTON_ID).addEventListener("submit",(event)=>{
+            event.preventDefault()
             const consumedQt=document.getElementById(CONSUMED_FOOD_QT_ID).value
             addFood(food,consumedQt)
         })
